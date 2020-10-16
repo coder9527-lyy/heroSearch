@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英雄详情页</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/detail.css">
+    <script src="./libs/jquery-1.12.4.min.js"></script>
+    <script src="./libs/template-web.js"></script>
+    <script src="./js/detail.js"></script>
+</head>
+
+<body>
+    <div class="main">
+        <div class="website-path">
+            <a href="javascript:void(0)">英雄联盟首页</a>
+            <i></i>
+            <a href="javascript:void(0)">游戏资料</a>
+            <i></i>
+            <a href="./index.html">全部英雄</a>
+            <i></i>
+            <a href="javascript:void(0)" class="here" id="DATAnametitle">黑暗之女 安妮</a>
+        </div>
+        <div class="contain">
+            <ul id="skinBG" class="defail-skin-bg clearfix">
+                <li title="黑暗之女">
+                    <img src="https://game.gtimg.cn/images/lol/act/img/skin/big1000.jpg" alt="黑暗之女">
+                </li>
+            </ul>
+            <div class="defail-skin-nav">
+                <div class="defail-skin-name">
+                    <span id="skinName">黑暗之女</span>
+                </div>
+                <ul id="skinNAV">
+                    <li class="current">
+                        <a title="黑暗之女">
+                            <img src="https://game.gtimg.cn/images/lol/act/img/skin/small1000.jpg" alt="黑暗之女">
+                            <span class="sbor"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="loading"></div>
+    </div>
+
+    <script id="bgTemp" type="text/html">
+        {{each}}
+        <li title="{{$value.name}}">
+            {{if $value.mainImg != ''}}
+            <img src="{{$value.mainImg}}" alt="{{$value.name}}">
+            {{/if}}
+        </li>
+        {{/each}}
+    </script>
+    <script id="iconTemp" type="text/html">
+        {{each}}
+        {{if $index == 0}}
+        <li class="current">
+            {{else}}
+        <li>
+            {{/if}}
+            {{if $value.iconImg != ''}}
+            <a title="{{$value.name}}">
+                <img src="{{$value.iconImg}}" alt="{{$value.name}}">
+                <span class="sbor"></span>
+            </a>
+            {{/if}}
+        </li>
+        {{/each}}
+    </script>
+</body>
+
+</html>

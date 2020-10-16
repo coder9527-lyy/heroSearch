@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lo英雄查询首页</title>
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script src="./libs/jquery-1.12.4.min.js"></script>
+    <script src="./libs/template-web.js"></script>
+    <script src="./js/index.js"></script>
+</head>
+
+<body>
+    <div class="contain clearfix">
+        <ul id="seleteChecklist" class="selete-checklist">
+            <li class="selete-item current">
+                <span class="ms-radio">
+                    <i class="i"></i>
+                </span>
+                <label data-id=''>所有英雄</label>
+            </li>
+            <li class="selete-item">
+                <span class="ms-radio">
+                    <i class="i"></i>
+                </span>
+                <label data-id="fighter">战士</label>
+            </li>
+            <li class="selete-item">
+                <span class="ms-radio">
+                    <i class="i"></i>
+                </span>
+                <label data-id="mage">法师</label>
+            </li>
+            <li class="selete-item">
+                <span class="ms-radio">
+                    <i class="i"></i>
+                </span>
+                <label data-id="assassin">刺客</label>
+            </li>
+            <li class="selete-item">
+                <span class="ms-radio">
+                    <i class="i"></i>
+                </span>
+                <label data-id="tank">坦克</label>
+            </li>
+            <li class="selete-item">
+                <span class="ms-radio">
+                    <i class="i"></i>
+                </span>
+                <label data-id="marksman">射手</label>
+            </li>
+            <li class="selete-item">
+                <span class="ms-radio">
+                    <i class="i"></i>
+                </span>
+                <label data-id="support">辅助</label>
+            </li>
+        </ul>
+        <div class="searchbox">
+            <input id="jSearchHeroInput" class="input-search" type="text" placeholder="请输入您要搜索的英雄名">
+        </div>
+        <ul id="jSearchHeroDiv" class="imgtextlist">
+            <li>
+                <a href="javascript:void(0)" title="黑暗之女 安妮">
+                    <img src="https://game.gtimg.cn/images/lol/act/img/champion/Annie.png" alt="黑暗之女 安妮">
+                    <p>黑暗之女</p>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" title="黑暗之女 安妮">
+                    <img src="https://game.gtimg.cn/images/lol/act/img/champion/Annie.png" alt="黑暗之女 安妮">
+                    <p>黑暗之女</p>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" title="黑暗之女 安妮">
+                    <img src="https://game.gtimg.cn/images/lol/act/img/champion/Annie.png" alt="黑暗之女 安妮">
+                    <p>黑暗之女</p>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:void(0)" title="黑暗之女 安妮">
+                    <img src="https://game.gtimg.cn/images/lol/act/img/champion/Annie.png" alt="黑暗之女 安妮">
+                    <p>黑暗之女</p>
+                </a>
+            </li>
+        </ul>
+        <div class="loading"></div>
+    </div>
+    <script id="heroTemp" type="text/html">
+        {{each}}
+        <li>
+            <a href="./detail.html?heroid={{$value.heroId}}"
+                title="{{$value.keywords.split(',')[0]}} {{$value.keywords.split(',')[1]}}">
+                <img src="{{$value.icon}}" alt="{{$value.keywords.split(',')[0]}} {{$value.keywords.split(',')[1]}}">
+                <p>{{$value.name}}</p>
+            </a>
+        </li>
+        {{/each}}
+    </script>
+</body>
+
+</html>
